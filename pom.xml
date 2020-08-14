@@ -6,12 +6,8 @@
 
   <groupId>com.kash.demo</groupId>
   <artifactId>Akash</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>war</packaging>
-
-  <name>com.first.demo Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,7 +30,14 @@
         <version>3.1.0</version>
         <scope>provided</scope>
 </dependency>
+
  </dependencies>
+ <distributionManagement>
+	   <repository>
+	      <id>first_maven_repository</id>
+	      <url>http://localhost:8081/repository/first_maven_repository/</url>
+	   </repository>
+	</distributionManagement>
 
   <build>
     <finalName>com.first.demo</finalName>
@@ -66,9 +69,12 @@
           <version>2.5.2</version>
         </plugin>
         <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
+	   <groupId>org.apache.maven.plugins</groupId>
+	   <artifactId>maven-deploy-plugin</artifactId>
+	   <version>2.8.2</version>
+	   <configuration>
+	   </configuration>
+	</plugin>
       </plugins>
     </pluginManagement>
   </build>
